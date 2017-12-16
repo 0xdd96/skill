@@ -110,3 +110,7 @@ io.send(payload2)
 io.interactive()
 
 ```
+
+## 参考资料
+32位： 
+64位： http://www.freebuf.com/articles/system/149364.html
