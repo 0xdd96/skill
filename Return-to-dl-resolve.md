@@ -112,5 +112,5 @@ io.interactive()
 ```
 
 ## 参考资料
-32位： 
+32位： http://pwn4.fun/2016/11/09/Return-to-dl-resolve/
 64位： http://www.freebuf.com/articles/system/149364.html
